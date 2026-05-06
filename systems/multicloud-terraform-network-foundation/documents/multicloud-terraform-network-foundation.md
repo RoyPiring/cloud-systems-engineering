@@ -1,11 +1,3 @@
----
-nextwork_uuid: e49e273f-6ad5-4abb-b987-430241b0de80
-original_filename: legendary-e49e273f-6ad5-4abb-b987-430241b0de80.md
-migrated_to: cloud-systems-engineering/multicloud-terraform-network-foundation.md
-migrated_at: 2026-05-04
-schema: nextwork-generator
----
-
 <img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
 
 # Multi-Cloud Network Foundation with Terraform
