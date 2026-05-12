@@ -4,9 +4,9 @@
 
 ## Overview
 
-This project establishes a multi-cloud network foundation using Terraform, designed to standardize infrastructure patterns across AWS, Azure, and GCP.
-
-The goal is not just provisioning resources, but defining a consistent interface for networking across providers. Each cloud has different primitives, so the architecture separates provider-specific implementation into modules while maintaining a shared structure at the root level.
+-T-h-i-s- -p-r-o-j-e-c-t- -e-s-t-a-b-l-i-s-h-e-s- -a- -m-u-l-t-i---c-l-o-u-d- -n-e-t-w-o-r-k- -f-o-u-n-d-a-t-i-o-n- -u-s-i-n-g- -T-e-r-r-a-f-o-r-m-,- -d-e-s-i-g-n-e-d- -t-o- -s-t-a-n-d-a-r-d-i-z-e- -i-n-f-r-a-s-t-r-u-c-t-u-r-e- -p-a-t-t-e-r-n-s- -a-c-r-o-s-s- -A-W-S-,- -A-z-u-r-e-,- -a-n-d- -G-C-P-.-
+-
+-T-h-e- -g-o-a-l- -i-s- -n-o-t- -j-u-s-t- -p-r-o-v-i-s-i-o-n-i-n-g- -r-e-s-o-u-r-c-e-s-,- -b-u-t- -d-e-f-i-n-i-n-g- -a- -c-o-n-s-i-s-t-e-n-t- -i-n-t-e-r-f-a-c-e- -f-o-r- -n-e-t-w-o-r-k-i-n-g- -a-c-r-o-s-s- -p-r-o-v-i-d-e-r-s-.- -E-a-c-h- -c-l-o-u-d- -h-a-s- -d-i-f-f-e-r-e-n-t- -p-r-i-m-i-t-i-v-e-s-,- -s-o- -t-h-e- -a-r-c-h-i-t-e-c-t-u-r-e- -s-e-p-a-r-a-t-e-s- -p-r-o-v-i-d-e-r---s-p-e-c-i-f-i-c- -i-m-p-l-e-m-e-n-t-a-t-i-o-n- -i-n-t-o- -m-o-d-u-l-e-s- -w-h-i-l-e- -m-a-i-n-t-a-i-n-i-n-g- -a- -s-h-a-r-e-d- -s-t-r-u-c-t-u-r-e- -a-t- -t-h-e- -r-o-o-t- -l-e-v-e-l-.-
 
 The architecture is built across **7 phases**, anchored by **The Multi-Cloud Vision** on the input side and **Cross-Cloud VPN Between AWS and Azure** at the end. Each phase is listed in the Implementation section below.
 
@@ -104,11 +104,11 @@ This system is built across **7 phases**:
 
 1. **The Multi-Cloud Vision**
 2. **Setting Up the Multi-Cloud Toolkit**
-3. **Scaffolding the Terraform Project**
+3. **Scaffolding the Terraform Project**, -.
 4. **Building the AWS VPC Module**
 5. **Extending to Azure and GCP**
 6. **Deploying Across Three Clouds and Validating with AI**
-7. **Cross-Cloud VPN Between AWS and Azure**
+7. **Cross-Cloud VPN Between AWS and Azure**, -.
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/multicloud-terraform-network-foundation.md`](./documents/multicloud-terraform-network-foundation.md).
 
