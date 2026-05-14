@@ -167,7 +167,7 @@ The important operational takeaway is that IAM expands permissions inside an acc
 
 ### Generating the executive-ready HTML report with Cursor
 
-I generated a comprehensive HTML engagement report designed for executive leadership, auditors, and governance stakeholders.
+I generated an HTML engagement report covering scope, controls, findings, and remediation status, written for executive leadership, auditors, and governance stakeholders.
 
 The report consolidated architecture diagrams, KPI metrics, compliance evidence, implementation timelines, risk registers, and governance decisions into a single browser-rendered artifact using Mermaid visualizations and structured reporting layouts.
 
