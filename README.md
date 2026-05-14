@@ -1,6 +1,6 @@
 # Cloud Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-2-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--13-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-3-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--13-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What's the technical foundation when AI is not the headline?*
 
@@ -23,6 +23,7 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 
 ## Systems
 
+- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**, AWS · NovaBurst · Terraform · Multi-Account
 - **[Build an E-Commerce Analytics Lakehouse](./systems/lakehouse-iceberg-trino-spark/)**, E-Commerce · Time-Travel
 - **[Multi-Cloud Network Foundation with Terraform](./systems/multicloud-terraform-network-foundation/)**, Multi-Cloud · Terraform · AWS · VPC
 

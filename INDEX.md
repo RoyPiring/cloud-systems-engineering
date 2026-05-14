@@ -8,5 +8,6 @@ Cloud platforms engineered for scale, reliability, and uptime.
 
 | # | System | What it does |
 |--:|---|---|
-| 1 | [Build an E-Commerce Analytics Lakehouse](./systems/lakehouse-iceberg-trino-spark/) | E-Commerce · Time-Travel |
-| 2 | [Multi-Cloud Network Foundation with Terraform](./systems/multicloud-terraform-network-foundation/) | Multi-Cloud · Terraform · AWS · VPC |
+| 1 | [Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/) | AWS · NovaBurst · Terraform · Multi-Account |
+| 2 | [Build an E-Commerce Analytics Lakehouse](./systems/lakehouse-iceberg-trino-spark/) | E-Commerce · Time-Travel |
+| 3 | [Multi-Cloud Network Foundation with Terraform](./systems/multicloud-terraform-network-foundation/) | Multi-Cloud · Terraform · AWS · VPC |

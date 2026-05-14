@@ -4,6 +4,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 
 **Original NextWork projects:**
 
+- Architect an AWS Landing Zone from Scratch
 - Build an E-Commerce Analytics Lakehouse
 - Multi-Cloud Network Foundation with Terraform
 
