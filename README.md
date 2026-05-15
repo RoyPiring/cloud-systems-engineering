@@ -23,9 +23,9 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 
 ## Systems
 
-- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**, AWS · NovaBurst · Terraform · Multi-Account
 - **[Build an E-Commerce Analytics Lakehouse](./systems/lakehouse-iceberg-trino-spark/)**, E-Commerce · Time-Travel
 - **[Multi-Cloud Network Foundation with Terraform](./systems/multicloud-terraform-network-foundation/)**, Multi-Cloud · Terraform · AWS · VPC
+- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**, AWS · NovaBurst · Terraform · Multi-Account
 - **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**, Zero-Key · AWS · Multi-Account · Cross-Account
 
 
