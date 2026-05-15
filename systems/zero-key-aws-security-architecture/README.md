@@ -15,22 +15,152 @@ The architecture is built across **13 phases**, anchored by **Building a Zero-Tr
 ## Architecture
 
 ```mermaid
+---
+title: Zero-Key AWS Security Architecture
+---
+%%{init: {"theme":"base","themeVariables": {"primaryColor":"#1B4332","primaryTextColor":"#F4D03F","primaryBorderColor":"#F4D03F","secondaryColor":"#264653","tertiaryColor":"#2F5233","lineColor":"#F4D03F","fontFamily":"ui-monospace, SFMono-Regular, Menlo, Consolas, monospace","fontSize":"13px"}}}%%
 flowchart LR
-    P1["Building a Zero-Trust Security Archite…"]
-    P2["Scaffolding the Multi-Account Infrastr…"]
-    P3["Establishing AWS Organizations and Cro…"]
-    P4["Deploying a Zero-SSH Active Directory…"]
-    P5["Federating 3,000 Users Through AD Conn…"]
-    P6["Achieving Zero-Key CI/CD with GitHub O…"]
-    P7["Enforcing ABAC Isolation Across Projec…"]
-    P8["Implementing Multi-Region KMS Keys and…"]
-    P1 --> P2
-    P2 --> P3
-    P3 --> P4
-    P4 --> P5
-    P5 --> P6
-    P6 --> P7
-    P7 --> P8
+    classDef datastore fill:#264653,stroke:#F4D03F,stroke-width:2px,color:#FFFFFF
+    classDef service fill:#1B4332,stroke:#F4D03F,stroke-width:2px,color:#F4D03F
+    classDef event fill:#7B42BC,stroke:#F4D03F,stroke-width:2px,color:#FFFFFF
+    classDef io fill:#0d1117,stroke:#F4D03F,stroke-width:1.5px,color:#F4D03F,font-style:italic
+
+    subgraph IaC["OpenTofu Multi-Region Bootstrap"]
+        Tofu(OpenTofu Project)
+        ProviderA(us-east-1 Provider Alias)
+        ProviderB(us-west-2 Provider Alias)
+        ADRs[(Module Boundaries + Provider Pins)]
+    end
+
+    subgraph Org["AWS Organization Multi-Account"]
+        OrgRoot(Organization Root)
+        MgmtAcct(Management Payer Account)
+        SharedAcct(Shared Services Account)
+        WorkloadAcct(Workload Account)
+        STS(STS AssumeRole Cross-Account)
+    end
+
+    subgraph Identity["Federated Identity for 3,000 Users"]
+        ThreeKUsers[("3,000 Healthcare Users")]
+        SambaAD(Samba 4 Domain Controller on EC2)
+        ADConnector(AD Connector Small)
+        IdC(IAM Identity Center)
+        PermSets[(Permission Sets)]
+    end
+
+    subgraph ZeroSSH["Zero-SSH Operations"]
+        SSM(Systems Manager Session Manager)
+        InstanceProfile(IAM Instance Profile)
+        CTLog[(CloudTrail Audit Trail)]
+    end
+
+    subgraph CICD["Zero-Key CI/CD"]
+        GHActions(GitHub Actions Workflow)
+        GHOIDC(GitHub OIDC Identity Provider)
+        DeployRole(Deployment Role)
+        PermBoundary(Permission Boundary)
+        DenyList[(Explicit Denies: iam:CreateUser, cloudtrail:StopLogging)]
+    end
+
+    subgraph ABAC["ABAC Authorization"]
+        SessionTags(Session Tags Project-Scoped)
+        STSEval(STS Trust Policy + Tag Eval)
+        BucketPolicy(S3 Bucket Policy: PrincipalTag == ResourceTag)
+    end
+
+    subgraph KMS["Multi-Region KMS + Envelope Encryption"]
+        KMSPrimary(KMS Multi-Region Primary)
+        KMSReplica(KMS Multi-Region Replica)
+        DataKey(AES-256 Data Key)
+        KMSGrant(Temporary KMS Grants)
+        PHI[(PHI Sample File)]
+    end
+
+    subgraph Secrets["Secrets Rotation"]
+        SecretsMgr(Secrets Manager)
+        RDS(RDS MySQL)
+        RotationLambda(Rotation Lambda)
+        CredVersions[(AWSCURRENT + AWSPREVIOUS + AWSPENDING)]
+    end
+
+    subgraph Storage["Ransomware-Resistant Storage"]
+        S3Bucket(S3 Versioned Bucket)
+        ObjectLock(Object Lock Compliance Mode)
+        BucketKeys(S3 Bucket Keys)
+        MFADelete(MFA Delete)
+    end
+
+    subgraph Workforce["Remote Workforce Failover"]
+        WorkSpacesUS1(WorkSpaces us-east-1)
+        WorkSpacesUS2(WorkSpaces us-west-2)
+        Route53(Route 53 Failover Policy)
+        ConnAlias(Connection Alias FQDN)
+    end
+
+    subgraph RedTeam["Red-Team Validation"]
+        Attack1{{Cross-Account Escalation Block}}
+        Attack2{{KMS Bypass Attempt Denied}}
+        Attack3{{S3 Object Delete Blocked}}
+        Attack4{{Session-Tag Bypass Denied}}
+    end
+
+    Tofu --> OrgRoot
+    ProviderA -.-> WorkloadAcct
+    ProviderB -.-> WorkloadAcct
+    OrgRoot --> MgmtAcct
+    OrgRoot --> SharedAcct
+    OrgRoot --> WorkloadAcct
+
+    ThreeKUsers --> SambaAD
+    SambaAD --> ADConnector
+    ADConnector --> IdC
+    IdC --> PermSets
+    PermSets --> STS
+    STS --> WorkloadAcct
+
+    SambaAD -.managed via.-> SSM
+    SSM --> InstanceProfile
+    SSM --> CTLog
+
+    GHActions --> GHOIDC
+    GHOIDC --> DeployRole
+    DeployRole --> PermBoundary
+    PermBoundary --> DenyList
+    DeployRole -->|short-lived creds| WorkloadAcct
+
+    SessionTags --> STSEval
+    STSEval --> BucketPolicy
+    BucketPolicy --> S3Bucket
+
+    KMSPrimary -.replicates.-> KMSReplica
+    KMSPrimary --> DataKey
+    DataKey --> PHI
+    KMSGrant -.short-lived delegation.-> DataKey
+    KMSPrimary --> CTLog
+
+    SecretsMgr --> RotationLambda
+    RotationLambda --> RDS
+    SecretsMgr --> CredVersions
+
+    S3Bucket --> ObjectLock
+    S3Bucket --> BucketKeys
+    S3Bucket --> MFADelete
+
+    WorkSpacesUS1 -.region failover.-> WorkSpacesUS2
+    Route53 --> ConnAlias
+    ConnAlias --> WorkSpacesUS1
+    ADConnector --> WorkSpacesUS1
+
+    Attack1 -.blocks.-> STS
+    Attack2 -.blocks.-> KMSPrimary
+    Attack3 -.blocks.-> ObjectLock
+    Attack4 -.blocks.-> BucketPolicy
+
+    class Tofu,ProviderA,ProviderB io
+    class OrgRoot,MgmtAcct,SharedAcct,WorkloadAcct,STS service
+    class SambaAD,ADConnector,IdC,SSM,InstanceProfile,GHActions,GHOIDC,DeployRole,PermBoundary,SecretsMgr,RotationLambda,KMSPrimary,KMSReplica,KMSGrant,SessionTags,STSEval,BucketPolicy,S3Bucket,ObjectLock,BucketKeys,MFADelete,WorkSpacesUS1,WorkSpacesUS2,Route53,ConnAlias service
+    class ADRs,PermSets,ThreeKUsers,CTLog,DenyList,CredVersions,RDS,DataKey,PHI datastore
+    class Attack1,Attack2,Attack3,Attack4 event
 ```
 
 The diagram shows the topology and data flow of the system as built. The full architectural narrative, with screenshots and prose, lives in [`documents/zero-key-aws-security-architecture.md`](./documents/zero-key-aws-security-architecture.md).
@@ -69,3 +199,6 @@ Build outcomes verified end-to-end. Each phase below is captured with screenshot
 - ✅ Implementing Multi-Region KMS Keys and Envelope Encryption
 - ✅ Exposing the Parameter Store Trap and Automating Secrets Rotation
 - ✅ Proving Ransomware Resistance with S3 Object Lock
+- ✅ Deploying WorkSpaces with Cross-Region Failover Architecture
+- ✅ Presenting the Architecture to Leadership
+- ✅ Red-Teaming the Architecture: Four Attacks, Four Blocks
