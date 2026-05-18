@@ -12,6 +12,8 @@ Cloud platforms engineered for scale, reliability, and uptime.
 - **[Build an E-Commerce Analytics Lakehouse](./systems/lakehouse-iceberg-trino-spark/)**: Open lakehouse on Iceberg, Trino, Spark, Polaris with time-travel disaster recovery phase.
 - **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Zero-trust healthcare architecture proven by four red-team attacks blocked at STS, KMS, S3, and ABAC.
 
+_+ 1 more system below in [All Systems](#all-systems)._
+
 ## All Systems
 
 | # | System | Onboarded | Last updated | What it does |
