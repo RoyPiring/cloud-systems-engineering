@@ -1,0 +1,109 @@
+lens: cloud-systems-engineering
+featured_enabled: auto
+threshold: 6
+scored_at: '2026-05-18'
+human_pin: []
+systems:
+- slug: aws-finops-command-center
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: Nine phases wire CUR 2.0, Glue, Athena, Grafana, Cost Anomaly
+      Detection, Lambda remediation, and Budget Actions; diagram names real subgraphs
+      and dual remediation gates.
+    voice: README and doc name concrete tradeoffs (Tag Policies vs Cost Allocation
+      Tags, static backstop vs dynamic responder) with little filler.
+    validation: Spike test phase covers synthetic anomaly invocation, DDB log, dashboard
+      annotation, but evidence references are textual and not separated as artifacts.
+  average: 8.3
+  rationale: FinOps loop from CUR 2.0 to Lambda remediation with dual approval gate
+    per environment tag.
+  featured: true
+- slug: aws-hybrid-cloud-network-architecture
+  axis_scores:
+    technical_depth: 10
+    voice: 9
+    validation: 10
+  axis_reasoning:
+    technical_depth: Nine-phase hub-spoke TGW design with BGP VPN, centralized NFW
+      inspection, PrivateLink, hybrid DNS, Reachability Analyzer, and a measured failover
+      drill.
+    voice: Sections like 'BGP dynamic routing and automatic failover' and the explicit-routing
+      rationale read as direct engineer prose with concrete reasoning.
+    validation: Final phase is a live failover drill at 38s reconvergence plus Reachability
+      Analyzer plus live data-plane tests, evidence by phase.
+  average: 9.7
+  rationale: Fortune 500 hybrid network with 38 second BGP reconvergence proven in
+    a live VPN failover drill.
+  featured: true
+- slug: aws-landing-zone-soc2-governance
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 9
+  axis_reasoning:
+    technical_depth: Ten phases cover four-OU topology, six-policy SCP library with
+      red-team review, StackSets baseline, Identity Center, Service Catalog vending,
+      and drift checks.
+    voice: Phrasing such as 'SCP inheritance was intentionally centered around OU
+      placement' carries clear ownership and reasoning, low filler.
+    validation: SCP smoke tests, findings remediation matrix, and StackSet drift validation
+      feed an executive HTML report, mapping evidence to SOC 2 controls.
+  average: 8.7
+  rationale: SOC 2 landing zone with SCP smoke tests feeding a findings matrix and
+    executive engagement report.
+  featured: true
+- slug: lakehouse-iceberg-trino-spark
+  axis_scores:
+    technical_depth: 7
+    voice: 6
+    validation: 6
+  axis_reasoning:
+    technical_depth: Nine-phase Iceberg lakehouse with Trino, Spark, Polaris, MinIO;
+      diagram lacks subgraph titles consistently and stays at component level without
+      failure modes.
+    voice: Doc opens with abstract framing ('the case for open lakehouse') and uses
+      generic phrasing more than the AWS systems; concrete decisions appear but less
+      densely.
+    validation: Phases include time-travel disaster recovery and compaction, but validation
+      is checklist-style without per-phase artifact references.
+  average: 6.3
+  rationale: Open lakehouse on Iceberg, Trino, Spark, Polaris with time-travel disaster
+    recovery phase.
+  featured: true
+- slug: multicloud-terraform-network-foundation
+  axis_scores:
+    technical_depth: 6
+    voice: 6
+    validation: 5
+  axis_reasoning:
+    technical_depth: Seven-phase Terraform across AWS, Azure, GCP with cross-cloud
+      IPsec VPN; diagram is shallower than the AWS systems and module interfaces stay
+      generic.
+    voice: Sentences such as 'this phase prepares the execution environment' read
+      as workmanlike but generic and contain filler framing.
+    validation: AI consistency review flags loose firewall rules and weak crypto,
+      but validation lacks per-phase artifact links beyond checkboxes.
+  average: 5.7
+  rationale: Three-cloud Terraform foundation with an IPsec tunnel between AWS and
+    Azure and an AI consistency review.
+  featured: false
+- slug: zero-key-aws-security-architecture
+  axis_scores:
+    technical_depth: 10
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: Thirteen phases span federation for 3,000 users, GitHub OIDC,
+      ABAC session tags, multi-region KMS, Secrets Manager rotation, WorkSpaces failover,
+      and red-team attack blocks.
+    voice: Passages tie SOC 2 controls and SAP-C02 domains to topology decisions;
+      prose names specific design choices over generic claims.
+    validation: Final phase runs four red-team attacks against STS, KMS, S3 Object
+      Lock, and bucket policy with documented blocks.
+  average: 9.3
+  rationale: Zero-trust healthcare architecture proven by four red-team attacks blocked
+    at STS, KMS, S3, and ABAC.
+  featured: true
