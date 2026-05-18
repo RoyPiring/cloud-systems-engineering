@@ -4,17 +4,7 @@
 
 Cloud platforms engineered for scale, reliability, and uptime.
 
-## Featured
-
-- **[AWS FinOps Command Center](./systems/aws-finops-command-center/)**: FinOps loop from CUR 2.0 to Lambda remediation with dual approval gate per environment tag.
-- **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**: Fortune 500 hybrid network with 38 second BGP reconvergence proven in a live VPN failover drill.
-- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**: SOC 2 landing zone with SCP smoke tests feeding a findings matrix and executive engagement report.
-- **[Build an E-Commerce Analytics Lakehouse](./systems/lakehouse-iceberg-trino-spark/)**: Open lakehouse on Iceberg, Trino, Spark, Polaris with time-travel disaster recovery phase.
-- **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Zero-trust healthcare architecture proven by four red-team attacks blocked at STS, KMS, S3, and ABAC.
-
-_+ 1 more system below in [All Systems](#all-systems)._
-
-## All Systems
+## Systems
 
 | # | System | Onboarded | Last updated | What it does |
 |--:|---|---|---|---|
