@@ -13,3 +13,4 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 3 | [Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/) | 2026-05-13 | 2026-05-14 | AWS · NovaBurst · Terraform · Multi-Account |
 | 4 | [Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/) | 2026-05-15 | 2026-05-15 | Zero-Key · AWS · Multi-Account · Cross-Account |
 | 5 | [AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/) | 2026-05-16 | 2026-05-16 | AWS · Multi-Account · Terraform · Hub-Spoke |
+| 6 | [AWS FinOps Command Center](./systems/aws-finops-command-center/) | 2026-05-16 | 2026-05-16 | AWS · FinOps · Pre-Artifacts · ADRs |

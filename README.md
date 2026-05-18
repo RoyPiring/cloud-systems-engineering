@@ -1,6 +1,6 @@
 # Cloud Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-5-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--16-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-6-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--18-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What's the technical foundation when AI is not the headline?*
 
@@ -28,5 +28,6 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 - **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**, AWS · NovaBurst · Terraform · Multi-Account
 - **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**, Zero-Key · AWS · Multi-Account · Cross-Account
 - **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**, AWS · Multi-Account · Terraform · Hub-Spoke
+- **[AWS FinOps Command Center](./systems/aws-finops-command-center/)**, AWS · FinOps · Pre-Artifacts · ADRs
 
 
