@@ -14,3 +14,4 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 4 | [Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/) | 2026-05-15 | 2026-05-15 | Zero-Key · AWS · Multi-Account · Cross-Account |
 | 5 | [AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/) | 2026-05-16 | 2026-05-16 | AWS · Multi-Account · Terraform · Hub-Spoke |
 | 6 | [AWS FinOps Command Center](./systems/aws-finops-command-center/) | 2026-05-18 | 2026-05-18 | AWS · FinOps · Pre-Artifacts · ADRs |
+| 7 | [Get Promoted: Build AWS DR Worth $1M](./systems/aws-multi-region-dr-tiering/) | 2026-05-19 | 2026-05-19 | AWS · DR · Principal-Level · Cost-Per-Nine |
