@@ -1,7 +1,7 @@
 lens: cloud-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-05-19'
+scored_at: '2026-06-23'
 human_pin: []
 systems:
 - slug: aws-finops-command-center
@@ -22,7 +22,7 @@ systems:
   average: 8.0
   rationale: 9-phase FinOps stack with synthetic spike test that ties anomaly to stopped
     EC2 and DDB log
-  featured: true
+  featured: false
 - slug: aws-hybrid-cloud-network-architecture
   axis_scores:
     technical_depth: 9
@@ -59,6 +59,26 @@ systems:
   average: 8.67
   rationale: 10-phase landing zone with SCP smoke tests and StackSet drift feeding
     a SOC 2 evidence matrix
+  featured: true
+- slug: aws-multi-compute-pci-payments-platform
+  axis_scores:
+    technical_depth: 9
+    voice: 7
+    validation: 8
+  axis_reasoning:
+    technical_depth: Diagram names three container paths (ECS-EC2, ECS-Fargate, EKS)
+      behind weighted ALB target groups, ECR scan-gate on CRITICAL, CodeDeploy 10%
+      canary blue/green with auto-rollback, API Gateway to Lambda SnapStart to EventBridge
+      to Step Functions Express to DynamoDB with DLQ, and EventBridge Pipes positioning.
+    voice: Reads on-brand around the compute tradeoff and scan-gate framing with specific
+      primitives like awsvpc and ECSCanary10Percent5Minutes, though the overview still
+      leans on practical experience and a four-hour completion line.
+    validation: Nine-phase checklist mirrors the Implementation list, with the end-to-end
+      sweep tying a deliberately vulnerable image to a scan-gate block and a PCI-DSS
+      audit log; measured numbers (k6 throughput, RTO) are not in the README itself.
+  average: 8.0
+  rationale: ECS, EKS, Lambda compared behind weighted ALB with ECR scan gate and
+    10% canary blue/green
   featured: true
 - slug: aws-multi-region-dr-tiering
   axis_scores:
