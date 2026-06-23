@@ -4,17 +4,11 @@
 
 ## Overview
 
-This project provided practical experience across multiple AWS architecture patterns and delivery models. Core technologies included Terraform, AWS CLI, Docker, ECS, EKS, API Gateway, Lambda, Step Functions Express, EventBridge Pipes, and k6.
+This project focused on evaluating three AWS compute models for a payment-processing platform while maintaining security, resiliency, and deployment agility. The objective was to compare ECS on EC2, ECS on Fargate, and EKS against a serverless event-driven architecture to determine which approach best aligned with Meridian Payments' operational and compliance requirements.
 
-The most valuable concepts were understanding compute tradeoffs, designing deployment safety mechanisms, implementing automated security controls, and validating resiliency through structured testing. Comparing container-based and serverless approaches highlighted how operational ownership, scalability characteristics, and cost considerations influence architectural decisions.
+The engagement also introduced a multi-agent development workflow using Cursor Composer agents, allowing infrastructure, deployment automation, testing, architecture planning, and documentation activities to progress in parallel. The outcome was a complete environment capable of demonstrating deployment patterns, security controls, workload resiliency, and architectural tradeoffs across multiple AWS services.
 
-The use of AI-assisted development workflows also demonstrated how specialized agents can accelerate implementation while maintaining separation of responsibilities.
-
-The project was completed in approximately four hours. The most challenging aspect involved troubleshooting IAM permissions associated with EventBridge Pipes and validating communication paths between SQS, Lambda, and Step Functions.
-
-Diagnosing why the pipe remained in a STOPPED state required careful review of execution roles, resource permissions, and service integration requirements. The experience reinforced the importance of least-privilege design and highlighted how service-to-service permissions can become a significant factor in event-driven architectures.
-
-I completed this project to gain hands-on experience evaluating ECS, EKS, and Lambda deployment models while building a resilient event
+The architecture is built across **9 phases**, anchored by **Architecting Under Pressure: The Meridian Payments Mission** on the input side and **Service Connect, EventBridge Pipes, and Phase 2 Positioning** at the end. Each phase is listed in the Implementation section below.
 
 ## Architecture
 
@@ -202,10 +196,30 @@ The diagram shows the topology and data flow of the system as built. The full ar
 
 ## Implementation
 
-_(implementation summary pending, see source document)_
+This system is built across **9 phases**:
+
+1. **Architecting Under Pressure: The Meridian Payments Mission**
+2. **Securing the Container Supply Chain with ECR and Scan Gates**
+3. **Proving Three Compute Paths on One Workload**
+4. **Refactoring the Webhook Dispatcher into a Serverless Event Backbone**
+5. **Deploying with Zero-Downtime Blue/Green Pipelines**
+6. **Chaos-Testing the Platform and Proving Enterprise SLA**
+7. **Delivering the Board Presentation and Leadership Package**
+8. **Final Validation: Scan Gate Demo and Real Numbers in the Presentation**
+9. **Service Connect, EventBridge Pipes, and Phase 2 Positioning**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/aws-multi-compute-pci-payments-platform.md`](./documents/aws-multi-compute-pci-payments-platform.md).
 
 ## Validation
 
-Build completed end-to-end. Screenshots, configuration, and observable behavior are preserved in [`documents/aws-multi-compute-pci-payments-platform.md`](./documents/aws-multi-compute-pci-payments-platform.md).
+Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-multi-compute-pci-payments-platform.md`](./documents/aws-multi-compute-pci-payments-platform.md):
+
+- ✅ Architecting Under Pressure: The Meridian Payments Mission
+- ✅ Securing the Container Supply Chain with ECR and Scan Gates
+- ✅ Proving Three Compute Paths on One Workload
+- ✅ Refactoring the Webhook Dispatcher into a Serverless Event Backbone
+- ✅ Deploying with Zero-Downtime Blue/Green Pipelines
+- ✅ Chaos-Testing the Platform and Proving Enterprise SLA
+- ✅ Delivering the Board Presentation and Leadership Package
+- ✅ Final Validation: Scan Gate Demo and Real Numbers in the Presentation
+- ✅ Service Connect, EventBridge Pipes, and Phase 2 Positioning

@@ -30,6 +30,6 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 - **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**, AWS · Multi-Account · Terraform · Hub-Spoke
 - **[AWS FinOps Command Center](./systems/aws-finops-command-center/)**, AWS · FinOps · Pre-Artifacts · ADRs
 - **[Get Promoted: Build AWS DR Worth $1M](./systems/aws-multi-region-dr-tiering/)**, AWS · DR · Principal-Level · Cost-Per-Nine
-- **[ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/)**
+- **[ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/)**, ECS · EKS · Lambda · ECR
 
 
