@@ -15,3 +15,4 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 5 | [AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/) | 2026-05-16 | 2026-05-16 | AWS · Multi-Account · Terraform · Hub-Spoke |
 | 6 | [AWS FinOps Command Center](./systems/aws-finops-command-center/) | 2026-05-18 | 2026-05-18 | AWS · FinOps · Pre-Artifacts · ADRs |
 | 7 | [Get Promoted: Build AWS DR Worth $1M](./systems/aws-multi-region-dr-tiering/) | 2026-05-19 | 2026-05-19 | AWS · DR · Principal-Level · Cost-Per-Nine |
+| 8 | [ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/) | 2026-05-19 | 2026-05-19 | AWS · Multi-Compute · PCI-DSS · Blue-Green |
