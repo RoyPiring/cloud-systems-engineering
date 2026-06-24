@@ -16,3 +16,4 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 6 | [AWS FinOps Command Center](./systems/aws-finops-command-center/) | 2026-05-18 | 2026-05-18 | AWS · FinOps · Pre-Artifacts · ADRs |
 | 7 | [Get Promoted: Build AWS DR Worth $1M](./systems/aws-multi-region-dr-tiering/) | 2026-05-19 | 2026-05-19 | AWS · DR · Principal-Level · Cost-Per-Nine |
 | 8 | [ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/) | 2026-05-19 | 2026-05-19 | ECS · EKS · Lambda · ECR |
+| 9 | [AWS Multi-Region Edge Failover Sprint](./systems/aws-multi-region-edge-failover-platform/) | 2026-05-19 | 2026-05-19 | AWS · Multi-Region · Two-Region · DNS |
