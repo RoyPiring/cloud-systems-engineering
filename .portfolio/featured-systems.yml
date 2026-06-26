@@ -1,7 +1,7 @@
 lens: cloud-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-06-23'
+scored_at: '2026-06-25'
 human_pin: []
 systems:
 - slug: aws-finops-command-center
@@ -108,6 +108,25 @@ systems:
   rationale: 1.1s measured failover vs 60s target, zero orphaned resources, $0.61
     sprint
   featured: true
+- slug: aws-polyglot-persistence-trading-lab
+  axis_scores:
+    technical_depth: 8
+    voice: 6
+    validation: 6
+  axis_reasoning:
+    technical_depth: Nine phases provision 52 resources comparing Aurora Serverless
+      v2, DynamoDB plus DAX, and MemoryDB via modular Terraform from 4 parallel agents,
+      with I/O-Optimized break-even and Babelfish proofs, though the build is a benchmark
+      lab not a running platform.
+    voice: Readable and structured but the overview leans on filler such as 'raised
+      application responsiveness' and 'raises scalability, resiliency'.
+    validation: Only DynamoDB reached full 50K-record verification; Aurora and MemoryDB
+      checks were VPC-blocked, helper EC2 cloud-init failed, and DMS reported 0 rows
+      into Aurora.
+  average: 6.67
+  rationale: 'Three-engine benchmark with named results: MemoryDB 5ms p50, DynamoDB
+    64 req/s zero errors'
+  featured: false
 - slug: lakehouse-iceberg-trino-spark
   axis_scores:
     technical_depth: 6
