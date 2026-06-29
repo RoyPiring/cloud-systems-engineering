@@ -178,7 +178,6 @@ flowchart LR
 
     EBPipes -.replaces.-> EliminatedLambdaGlue
     EBPipes -.consideration for.-> Phase2Positioning
-
     class Terraform,AWSCLI,Docker,K6,CursorIDE service
     class Foundation,Pipeline,Backbone,Breaker,Narrator service
     class FlaskApp,DockerBuild service
@@ -212,7 +211,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-multi-compute-pci-payments-platform.md`](./documents/aws-multi-compute-pci-payments-platform.md):
+Each build phase below is documented in [`documents/aws-multi-compute-pci-payments-platform.md`](./documents/aws-multi-compute-pci-payments-platform.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Architecting Under Pressure: The Meridian Payments Mission
 - ✅ Securing the Container Supply Chain with ECR and Scan Gates

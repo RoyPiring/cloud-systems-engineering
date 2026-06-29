@@ -155,7 +155,6 @@ flowchart LR
     Attack2 -.blocks.-> KMSPrimary
     Attack3 -.blocks.-> ObjectLock
     Attack4 -.blocks.-> BucketPolicy
-
     class Tofu,ProviderA,ProviderB io
     class OrgRoot,MgmtAcct,SharedAcct,WorkloadAcct,STS service
     class SambaAD,ADConnector,IdC,SSM,InstanceProfile,GHActions,GHOIDC,DeployRole,PermBoundary,SecretsMgr,RotationLambda,KMSPrimary,KMSReplica,KMSGrant,SessionTags,STSEval,BucketPolicy,S3Bucket,ObjectLock,BucketKeys,MFADelete,WorkSpacesUS1,WorkSpacesUS2,Route53,ConnAlias service
@@ -187,7 +186,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/zero-key-aws-security-architecture.md`](./documents/zero-key-aws-security-architecture.md):
+Each build phase below is documented in [`documents/zero-key-aws-security-architecture.md`](./documents/zero-key-aws-security-architecture.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Building a Zero-Trust Security Architecture for Healthcare
 - ✅ Scaffolding the Multi-Account Infrastructure

@@ -4,7 +4,7 @@
 
 > *What's the technical foundation when AI is not the headline?*
 
-Cloud platforms engineered for scale, reliability, and uptime. Each system in this domain ships with a Mermaid architecture diagram, a numbered implementation map, and a checkmark list of build outcomes verified end-to-end. The original source document is kept per system.
+Cloud platforms engineered for scale, reliability, and uptime. Each system in this domain ships with a Mermaid architecture diagram, a numbered implementation map, and a checkmark list of documented build phases. The original source document is kept per system.
 
 ## Who this is for
 

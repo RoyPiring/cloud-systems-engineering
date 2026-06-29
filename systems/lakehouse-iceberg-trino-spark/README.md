@@ -72,9 +72,6 @@ flowchart LR
     Snapshots -->|stored in| MinIO
     Spark -->|compaction & snapshot expiration| Iceberg
     Iceberg -->|time-travel reads of prior snapshots| Trino
-class MinIO,Iceberg,Snapshots datastore
-class User io
-
     class MinIO,Iceberg,Snapshots datastore
     class Cursor,Compose,Spark,Trino,Jupyter,Polaris service
     class User io
@@ -100,7 +97,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/lakehouse-iceberg-trino-spark.md`](./documents/lakehouse-iceberg-trino-spark.md):
+Each build phase below is documented in [`documents/lakehouse-iceberg-trino-spark.md`](./documents/lakehouse-iceberg-trino-spark.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Configuring the Development Environment
 - ✅ Scaffolding Infrastructure with Parallel Agents

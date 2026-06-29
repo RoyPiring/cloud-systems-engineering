@@ -149,7 +149,6 @@ flowchart LR
     CostAvoidance --> SavingsLine
     KPIDash --> ROILine
     CostPerNine --> Reduced280K
-
     class TerraformLocal,LocalStack,Docker,CursorIDE,AgentA,AgentB,AgentC,AgentD,AgentE service
     class AppTier,DataTier,NetTier,Checkout,Catalog,UserProfiles,Analytics service
     class Route53,ARCRouting,HealthChecks,SecondaryRegion,Locust,ChaosScripts,VaultLock,DenyDelete service
@@ -176,7 +175,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-multi-region-dr-tiering.md`](./documents/aws-multi-region-dr-tiering.md):
+Each build phase below is documented in [`documents/aws-multi-region-dr-tiering.md`](./documents/aws-multi-region-dr-tiering.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ The $4.7M Problem That Demanded a Solution
 - ✅ Building the War Room: Tools and Environment

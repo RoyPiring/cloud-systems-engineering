@@ -160,7 +160,6 @@ flowchart LR
     PitchDeck --> TechDebt
     PitchDeck --> Roadmap
     ChargebackDash -.live data.-> PitchDeck
-
     class Terraform,AWSCLI,Docker io
     class GrafanaOSS,AthenaPlugin,MgmtAcct,AllFeatures,SCPs,TagPolicies,CostAllocTags service
     class CUR,GlueCatalog,GlueCrawler,AthenaWG,ChargebackDash,ExecKPI,Forecast12,TemplateVars service
@@ -191,7 +190,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-finops-command-center.md`](./documents/aws-finops-command-center.md):
+Each build phase below is documented in [`documents/aws-finops-command-center.md`](./documents/aws-finops-command-center.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Building an Enterprise FinOps Command Center
 - ✅ Setting Up the FinOps Toolchain

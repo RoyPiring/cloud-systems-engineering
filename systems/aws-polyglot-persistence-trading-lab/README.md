@@ -166,7 +166,6 @@ flowchart LR
     MemoryDBCluster --> RevenueAPI
     RevenueAPI --> PriceFeed
     PriceFeed --> SixHundredK
-
     class Terraform,K6,AWSCLI,CursorWorkspace service
     class NetworkingModule,AuroraModule,DynamoModule,MemoryDBModule service
     class AuroraCluster,RDSProxy,Babelfish,DAX,GSI,MemoryDBCluster service
@@ -198,7 +197,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-polyglot-persistence-trading-lab.md`](./documents/aws-polyglot-persistence-trading-lab.md):
+Each build phase below is documented in [`documents/aws-polyglot-persistence-trading-lab.md`](./documents/aws-polyglot-persistence-trading-lab.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Taking On the Assignment: Day 1 at Meridian Energy Trading
 - ✅ Architecting the Solution: The Requirement Package

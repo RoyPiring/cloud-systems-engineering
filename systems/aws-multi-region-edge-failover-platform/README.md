@@ -169,7 +169,6 @@ flowchart LR
     EdgeOnlyControls -.principle.-> CFFunction
     EdgeOnlyControls -.principle.-> LambdaEdge
     VersionControlled -.via Terraform.-> TerraformWAF
-
     class Terraform,AWSCLI,CursorComposer,PowerShell service
     class ProviderUSE1,ProviderEUW1 service
     class LambdaUSE1,LambdaEUW1,NLBUSE1,NLBEUW1 service
@@ -202,7 +201,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-multi-region-edge-failover-platform.md`](./documents/aws-multi-region-edge-failover-platform.md):
+Each build phase below is documented in [`documents/aws-multi-region-edge-failover-platform.md`](./documents/aws-multi-region-edge-failover-platform.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Architecting a Crisis Response: The $0.61 Sprint
 - ✅ Building Two-Region Origins and Automated DNS Failover

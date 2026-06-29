@@ -87,9 +87,6 @@ flowchart LR
 
     Claude -.->|flags loose FW + weak crypto| GCPMod
     Claude -.->|recommends AES-256| VPN
-class State datastore
-class IGW,NAT,AzDef,CRouter,CNAT,VPN event
-
     class State datastore
     class TF,AWSMod,AzMod,GCPMod,VPC,AWSRT,VNet,GVPC,FW,Claude service
     class IGW,NAT,AzDef,CRouter,CNAT,VPN event
@@ -114,7 +111,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/multicloud-terraform-network-foundation.md`](./documents/multicloud-terraform-network-foundation.md):
+Each build phase below is documented in [`documents/multicloud-terraform-network-foundation.md`](./documents/multicloud-terraform-network-foundation.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ The Multi-Cloud Vision
 - ✅ Setting Up the Multi-Cloud Toolkit

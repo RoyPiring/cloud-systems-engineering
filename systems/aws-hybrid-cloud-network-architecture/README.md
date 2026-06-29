@@ -139,7 +139,6 @@ flowchart LR
     DataPlane -.live packets.-> PLConsumer
     FailoverDrill -.ipsec auto --down tunnel1.-> S2SVPN
     FailoverDrill -.measures.-> BGP
-
     class Terraform,ProviderA,ProviderB io
     class NetworkingAcct,WorkloadAcct,RAM,TGW,TGWShare,AppVPC,SharedVPC,InspectVPC,DMZVPC service
     class CGW,S2SVPN,BGP,NFW,Suricata,Egress,S3GW,DDBGW,IntNLB,PLProducer,PLConsumer service
@@ -169,7 +168,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-hybrid-cloud-network-architecture.md`](./documents/aws-hybrid-cloud-network-architecture.md):
+Each build phase below is documented in [`documents/aws-hybrid-cloud-network-architecture.md`](./documents/aws-hybrid-cloud-network-architecture.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Building a Fortune 500 Network Reference Architecture
 - ✅ Scaffolding the Multi-Account Terraform Environment

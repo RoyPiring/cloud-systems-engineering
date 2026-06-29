@@ -118,7 +118,6 @@ flowchart LR
     DriftCheck -->|stack-state evidence into| FRM
     FRM -->|sourced into| HtmlReport
     HtmlReport -->|delivered to executives and SOC 2 auditors| Evidence
-
     class ADRs,PermSets,FRM datastore
     class Cursor,Terraform,MgmtAcct,FullAccess,OrgRoot,ProdOU,SandboxOU,SecurityOU,SharedOU,SCPRegions,SCPEscape,SCPServices,SCPBoundaries,IdC,AuditRole,StackSets,CloudTrail,Config,GuardDuty,SvcCatalog,AVM,TagPolicy,SmokeTests service
     class SCPRedTeam,DriftCheck event
@@ -146,7 +145,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/aws-landing-zone-soc2-governance.md`](./documents/aws-landing-zone-soc2-governance.md):
+Each build phase below is documented in [`documents/aws-landing-zone-soc2-governance.md`](./documents/aws-landing-zone-soc2-governance.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Architecting NovaBurst's Governance Foundation
 - ✅ Environment Setup and Terraform Initialization
