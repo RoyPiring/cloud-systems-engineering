@@ -49,7 +49,7 @@ The architecture separated workload routing from inspection return paths, allowi
 
 Automatic Transit Gateway route propagation was intentionally disabled so attachments could be associated explicitly with either the spoke route table or the inspection route table.
 
-This becomes critical at enterprise scale because centralized inspection architectures require predictable traffic steering rather than relying on default route behavior. Explicit routing also improves segmentation, reduces accidental trust paths, and simplifies operational troubleshooting during incident response.
+This becomes critical at enterprise scale because centralized inspection architectures require predictable traffic steering rather than relying on default route behavior. Explicit routing also sharpens segmentation, reduces accidental trust paths, and simplifies operational troubleshooting during incident response.
 
 ## Establishing Hybrid Connectivity via Site-to-Site VPN with BGP
 
@@ -113,7 +113,7 @@ The environment validated end-to-end DNS resolution through the VPN tunnel, prov
 
 Inbound resolver endpoints allow external systems such as on-premises DNS servers to resolve private Route 53 records hosted inside AWS.
 
-Outbound resolver endpoints perform the opposite role by forwarding DNS queries from AWS workloads toward external or on-premises DNS infrastructure. Hybrid architectures typically require both directions simultaneously to maintain seamless name resolution across environments.
+Outbound resolver endpoints perform the opposite role by forwarding DNS queries from AWS workloads toward external or on-premises DNS infrastructure. Hybrid architectures typically require both directions simultaneously to maintain consistent name resolution across environments.
 
 ## Proving Compliance with Reachability Analyzer and Data-Plane Tests
 
@@ -159,7 +159,7 @@ Tunnel state validation confirmed that the failed tunnel transitioned to DOWN st
 
 This project combined Terraform, AWS CLI, Transit Gateway, Site-to-Site VPN, Route 53 Resolver, AWS Network Firewall, PrivateLink, Reachability Analyzer, strongSwan, and FRRouting into a unified enterprise hybrid networking architecture.
 
-The concepts reinforced throughout the build included hub-spoke segmentation, dynamic BGP routing, centralized inspection, cross-account governance, hybrid DNS, endpoint optimization, and compliance-oriented path validation.
+The concepts reinforced throughout the build included hub-spoke segmentation, dynamic BGP routing, centralized inspection, cross-account governance, hybrid DNS, endpoint tuning, and compliance-oriented path validation.
 
 ### Time investment and challenges
 
@@ -169,7 +169,7 @@ Multiple routing, inspection, and failover scenarios required iterative validati
 
 I completed this project to deepen my understanding of enterprise-grade hybrid cloud networking and scalable AWS network governance patterns.
 
-The next area I want to improve is advanced intrusion detection and traffic-analysis workflows, particularly around distributed IDS systems, east-west traffic visibility, and automated threat detection inside large VPC environments.
+The next area I want to sharpen is advanced intrusion detection and traffic-analysis workflows, particularly around distributed IDS systems, east-west traffic visibility, and automated threat detection inside large VPC environments.
 
 ---
 

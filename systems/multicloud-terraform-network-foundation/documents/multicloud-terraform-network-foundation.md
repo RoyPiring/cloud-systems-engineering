@@ -105,7 +105,7 @@ Terraform state is used to detect drift, confirming that deployed resources rema
 
 Claude Code is used to review the Terraform modules for consistency and security.
 
-It identified inconsistencies in variable definitions and flagged overly permissive firewall rules in GCP. Standardizing variable structures and tightening security rules improved alignment across providers and reduced risk.
+It identified inconsistencies in variable definitions and flagged overly permissive firewall rules in GCP. Standardizing variable structures and tightening security rules strengthened alignment across providers and reduced risk.
 
 ## Secret Mission: Cross-Cloud VPN Between AWS and Azure
 
@@ -115,7 +115,7 @@ It identified inconsistencies in variable definitions and flagged overly permiss
 
 This extension introduces connectivity between cloud environments.
 
-An IPsec VPN tunnel is configured between AWS and Azure, enabling secure communication across networks. Claude Code recommended stronger encryption settings, such as AES-256, to improve security for production use.
+An IPsec VPN tunnel is configured between AWS and Azure, enabling secure communication across networks. Claude Code recommended stronger encryption settings, such as AES-256, to strengthen security for production use.
 
 ## Cleaning Up and Reflecting on What Was Built
 

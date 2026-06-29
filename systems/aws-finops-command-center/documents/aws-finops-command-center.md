@@ -15,7 +15,7 @@
 
 ### The mission: automated cost governance for a Fortune 10 company
 
-In this project, I built an enterprise FinOps command center designed to improve cloud cost visibility, automate governance actions, and provide leadership-ready financial reporting for a Fortune 10 scale environment.
+In this project, I built an enterprise FinOps command center designed to sharpen cloud cost visibility, automate governance actions, and provide leadership-ready financial reporting for a Fortune 10 scale environment.
 
 The architecture combined CUR 2.0 exports, Glue, Athena, Grafana, Cost Anomaly Detection, Lambda remediation workflows, Budget Actions, Organizations Tag Policies, and executive dashboards into a unified FinOps operating model. The objective was to move from reactive billing analysis toward automated cost intelligence and operational governance.
 
@@ -125,7 +125,7 @@ Validation instead occurred by directly invoking the remediation Lambda using th
 
 I assembled the executive pitch deck using live Grafana dashboards together with architecture artifacts, risk matrices, technical debt scorecards, and optimization roadmaps.
 
-The final package translated engineering implementation into executive language focused on savings opportunities, governance maturity, operational risk reduction, and long-term optimization strategy.
+The final package translated engineering implementation into executive language focused on savings opportunities, governance maturity, operational risk reduction, and long-term cost strategy.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/91b508b8-c548-4372-a701-e10eb119e1cf_cm8oj3sd)
 
@@ -149,7 +149,7 @@ Operational value of automated reporting cadence
 
 Manual spreadsheet reporting creates drift because reporting quality depends on availability and timing.
 
-The automated cadence established a consistent operating rhythm where FinOps and finance teams began every week from the same validated KPI baseline. This improved decision speed and reduced reporting inconsistency across stakeholders.
+The automated cadence established a consistent operating rhythm where FinOps and finance teams began every week from the same validated KPI baseline. This sharpened decision speed and reduced reporting inconsistency across stakeholders.
 
 ## Reflections and Key Takeaways
 
@@ -157,7 +157,7 @@ The automated cadence established a consistent operating rhythm where FinOps and
 
 This project combined Terraform, AWS CLI, Docker, Grafana, CUR 2.0, Athena, Glue, Cost Anomaly Detection, Lambda remediation workflows, Budget Actions, and Organizations governance into a unified FinOps platform.
 
-The concepts reinforced included chargeback reporting, anomaly detection, cost governance, automated remediation, dashboard engineering, financial accountability, and operational cost optimization.
+The concepts reinforced included chargeback reporting, anomaly detection, cost governance, automated remediation, dashboard engineering, financial accountability, and operational cost discipline.
 
 ### Time investment and hardest challenges
 

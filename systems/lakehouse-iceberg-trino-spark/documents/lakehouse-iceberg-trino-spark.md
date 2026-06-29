@@ -89,7 +89,7 @@ Tables are designed to represent customers, orders, and related entities, ensuri
 
 DDL statements define table structure and optimization settings.
 
-Partitioning is applied where it improves query performance, such as time-based partitions for transactional data. Compression settings are configured to balance storage efficiency and read performance.
+Partitioning is applied where it sharpens query performance, such as time-based partitions for transactional data. Compression settings are configured to balance storage efficiency and read performance.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/06254081-9b9c-45a6-8086-f39af90d752a_c9r5t1y7)
 
@@ -113,7 +113,7 @@ Queries are executed to validate that the system can support analytical workload
 
 Baseline metrics establish performance expectations.
 
-Query execution times provide a reference point for future optimization, ensuring that changes to the system can be measured against initial performance.
+Query execution times provide a reference point for future tuning, ensuring that changes to the system can be measured against initial performance.
 
 ### Inspecting Iceberg snapshots and file statistics
 
@@ -139,7 +139,7 @@ Frequent changes increase file count and snapshot complexity, which can degrade 
 
 Metrics validate the impact of maintenance.
 
-Reduced file counts improve query performance, while snapshot management ensures that metadata remains manageable as the dataset grows.
+Reduced file counts sharpen query performance, while snapshot management ensures that metadata remains manageable as the dataset grows.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/06254081-9b9c-45a6-8086-f39af90d752a_m8j3f6xa)
 

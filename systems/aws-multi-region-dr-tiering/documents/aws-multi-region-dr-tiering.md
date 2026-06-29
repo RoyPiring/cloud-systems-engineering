@@ -63,7 +63,7 @@ Agent-B generated four DR workspace modules and workloads were mapped into recov
 
 Checkout, catalog, user profiles, and analytics each received different recovery treatments based on operational value rather than applying one universal architecture.
 
-This tiered model optimized cost by matching protection levels to business criticality instead of over-engineering every workload.
+This tiered model tightened cost by matching protection levels to business criticality instead of over-engineering every workload.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/dde42cdf-e829-4a4a-a8af-ec2b7bc0b960_8f1w2uti)
 
@@ -147,7 +147,7 @@ Four out of four gameday scenarios passed with measured failover in seconds.
 
 This project combined Terraform, LocalStack, Cursor IDE, Route 53 failover controls, Locust testing, and TOGAF-style documentation into a unified DR engineering workflow.
 
-The concepts reinforced throughout the build included multi-region resilience, DR tiering, chaos testing, RTO/RPO planning, FinOps optimization, cost-per-nine analysis, and executive architecture communication.
+The concepts reinforced throughout the build included multi-region resilience, DR tiering, chaos testing, RTO/RPO planning, FinOps tuning, cost-per-nine analysis, and executive architecture communication.
 
 ### Time investment and challenges
 
