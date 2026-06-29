@@ -47,7 +47,7 @@ The multi-region provider aliases created two separately configured AWS provider
 
 Each alias pinned a different default region so infrastructure could target the correct API endpoint explicitly without mixing regional deployments accidentally. Resources requiring deterministic placement, such as KMS replicas and disaster-recovery services, referenced the appropriate provider alias directly during deployment.
 
-This pattern becomes critical in enterprise-scale environments because regional separation affects encryption, replication, failover behavior, compliance scope, and service availability. Explicit provider targeting removes ambiguity from infrastructure orchestration and improves deployment predictability.
+This pattern becomes critical in enterprise-scale environments because regional separation affects encryption, replication, failover behavior, compliance scope, and service availability. Explicit provider targeting removes ambiguity from infrastructure orchestration and raises deployment predictability.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/2474ada8-c282-4e55-8421-ea5270c427f4_40uwpch8)
 
@@ -99,7 +99,7 @@ I deployed a Small AD Connector integrated with the Samba Domain Controller and 
 
 Permission Sets were then created and mapped to federated identities to validate secure access into workload accounts without relying on locally managed IAM users.
 
-This architecture centralizes identity management while allowing AWS accounts to inherit enterprise authentication standards automatically. The model also improves operational scalability because identity lifecycle management remains tied to Active Directory rather than duplicated across cloud accounts manually.
+This architecture centralizes identity management while allowing AWS accounts to inherit enterprise authentication standards automatically. The model also raises operational scalability because identity lifecycle management remains tied to Active Directory rather than duplicated across cloud accounts manually.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/2474ada8-c282-4e55-8421-ea5270c427f4_lxebjjz7)
 
@@ -139,7 +139,7 @@ Traditional per-project IAM policies become operationally difficult to manage as
 
 ABAC avoids this by using reusable policy logic that evaluates principal tags and resource tags dynamically at request time. Instead of creating hundreds of near-identical policies, one policy framework can govern many projects consistently through metadata alignment.
 
-This dramatically improves operational maintainability while reducing policy fragmentation across large organizations.
+This dramatically raises operational maintainability while reducing policy fragmentation across large organizations.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/2474ada8-c282-4e55-8421-ea5270c427f4_s1ezbdg5)
 
@@ -159,7 +159,7 @@ I created a multi-region KMS key, replicated it across regions, and implemented 
 
 Temporary KMS grants were also created and retired dynamically to simulate short-lived Lambda access patterns without permanently expanding the key policy.
 
-This architecture improves resiliency because encrypted workloads can fail over between regions while maintaining cryptographic continuity and centralized governance.
+This architecture raises resiliency because encrypted workloads can fail over between regions while maintaining cryptographic continuity and centralized governance.
 
 ### The envelope encryption flow for PHI data
 
@@ -205,7 +205,7 @@ The forced rotation workflow produced multiple secret versions carrying labels s
 
 During rotation, the pending version temporarily coexisted with the current production credential until the database completed credential synchronization successfully. Once finalized, the new credential inherited the AWSCURRENT label while the old credential transitioned to AWSPREVIOUS.
 
-This demonstrated how Secrets Manager supports seamless credential transitions without introducing application downtime during password rollover events.
+This demonstrated how Secrets Manager supports uninterrupted credential transitions without introducing application downtime during password rollover events.
 
 ## Proving Ransomware Resistance with S3 Object Lock
 
@@ -291,7 +291,7 @@ This project reinforced how enterprise cloud security is fundamentally about con
 
 I completed this project to deepen my understanding of enterprise-grade AWS security architecture, eliminate long-lived credentials across cloud workflows, validate zero-trust operational patterns, and build executive-ready governance reporting aligned to regulated healthcare environments.
 
-The next area I want to improve is advanced AWS network-security architecture, particularly around VPC Flow Logs, distributed intrusion detection systems, east-west traffic inspection, and automated threat-hunting workflows across multi-account environments.
+The next area I want to strengthen is advanced AWS network-security architecture, particularly around VPC Flow Logs, distributed intrusion detection systems, east-west traffic inspection, and automated threat-hunting workflows across multi-account environments.
 
 ---
 

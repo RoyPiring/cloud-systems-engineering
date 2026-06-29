@@ -129,7 +129,7 @@ I enabled IAM Identity Center and created permission sets aligned to NovaBurstâ€
 
 Cross-account audit roles were deployed to allow the Security account to perform incident response and governance validation across member accounts without requiring local administrative access inside each environment. The implementation also validated how permission sets become temporary IAM roles with session expiration, reinforcing least-privilege access principles.
 
-This centralized identity model reduced IAM sprawl while improving operational accountability and auditability.
+This centralized identity model reduced IAM sprawl while raising operational accountability and auditability.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/2577e51c-ef17-4b61-8d4f-ae269f397cd2_cmxv5iip)
 
@@ -211,7 +211,7 @@ The implementation required careful coordination between organizational hierarch
 
 The biggest takeaway was understanding how governance can operate as inherited infrastructure rather than manual administrative enforcement.
 
-The next area I want to improve is cloud-cost governance through automated lifecycle enforcement, policy-driven optimization, and organization-wide operational analytics.
+The next area I want to strengthen is cloud-cost governance through automated lifecycle enforcement, policy-driven cost control, and organization-wide operational analytics.
 
 ---
 
