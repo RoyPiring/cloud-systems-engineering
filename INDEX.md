@@ -18,3 +18,4 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 8 | [ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/) | 2026-05-19 | 2026-05-19 | ECS · EKS · Lambda · ECR |
 | 9 | [AWS Multi-Region Edge Failover Sprint](./systems/aws-multi-region-edge-failover-platform/) | 2026-05-19 | 2026-05-19 | AWS · Multi-Region · Two-Region · DNS |
 | 10 | [AWS Database Modernization Lab](./systems/aws-polyglot-persistence-trading-lab/) | 2026-05-19 | 2026-05-19 | Aurora · DynamoDB · MemoryDB · Polyglot |
+| 11 | [AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/) | 2026-06-30 | 2026-06-30 | AWS · Terraform · Zero-Orphan · Migration |
