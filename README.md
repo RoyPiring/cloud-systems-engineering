@@ -1,6 +1,6 @@
 # Cloud Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-10-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--06--25-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-11-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--06--30-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What's the technical foundation when AI is not the headline?*
 
@@ -23,12 +23,12 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 
 ## Featured Systems
 
-- **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**: TGW hub-spoke with BGP failover measured at 38s reconvergence under a 60s target
-- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**: SOC 2 evidence chain with 6 SCPs, StackSets baseline, and Service Catalog account vending
-- **[Get Promoted: Build AWS DR Worth $1M](./systems/aws-multi-region-dr-tiering/)**: 23s measured Checkout RTO, 4 of 4 gameday scenarios pass, Vault Lock blocks ransomware
-- **[AWS Multi-Region Edge Failover Sprint](./systems/aws-multi-region-edge-failover-platform/)**: 1.1s measured failover vs 60s target, zero orphaned resources, $0.61 sprint
-- **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Zero-trust healthcare stack with 4 red-team attacks blocked across STS, KMS, S3 Lock, and ABAC
+- **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**: Hybrid TGW network with measured 38s BGP reconvergence and drift-gated path validation
+- **[ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/)**: Three compute paths on one workload with a scan gate proven by a vulnerable image
+- **[AWS Multi-Region Edge Failover Sprint](./systems/aws-multi-region-edge-failover-platform/)**: Two-layer edge failover measured at 1.1s with a zero-orphan teardown check
+- **[AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/)**: Terraform migration platform proven by an empty Gate 4 tag query after 95-resource destroy
+- **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Zero-trust healthcare architecture with a four-attack red-team, four blocks
 
-_+ 5 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 6 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 
