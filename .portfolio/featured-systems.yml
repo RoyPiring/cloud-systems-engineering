@@ -1,25 +1,51 @@
 lens: cloud-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-06-30'
+scored_at: '2026-07-15'
 human_pin: []
 systems:
+- slug: aws-bedrock-multi-tenant-routing
+  axis_scores:
+    technical_depth: 9
+    voice: 9
+    validation: 9
+  axis_reasoning:
+    technical_depth: The diagram carries real components and a rejected-alternative
+      node (attribution must come from the billing path, not logs), plus a DynamoDB
+      circuit breaker with 30s TTL recovery that returns HTTP 200 with a fallback
+      flag rather than failing the caller.
+    voice: 'Direct first-person prose with no filler verbs anywhere, and the failure
+      narrative owns the mistake plainly: the first audit script checked for InvokeModel
+      while the substrate used Converse, so the fix made the evidence match the real
+      call path.'
+    validation: 'Four named bars each carry a hard number: fallback completed in 1.28s,
+      p95 latency 868.72 ms across 40 requests against a 3000 ms target, audit-region.sh
+      returned PASS with zero HIPAA region violations, and the zero-code swap was
+      proven by the returned modelId.'
+  average: 9.0
+  rationale: Config-driven model routing with circuit breaker fallback measured at
+    1.28s
+  featured: true
 - slug: aws-finops-command-center
   axis_scores:
     technical_depth: 8
     voice: 7
-    validation: 8
+    validation: 7
   axis_reasoning:
-    technical_depth: Nine phases wire CUR 2.0 to Glue to Athena to Grafana with a
-      dual remediation loop, and the diagram names real components and edges.
-    voice: Direct and specific on the Tag Policies vs Cost Allocation Tags distinction,
-      though some passages lean on filler.
-    validation: 'The spike-test phase carries the strongest evidence: a real EventBridge
-      rejection of synthetic events, worked around by direct Lambda invoke that stopped
-      the instance and wrote to DynamoDB.'
-  average: 7.7
-  rationale: Detection-to-remediation FinOps loop validated end-to-end by a live spike
-    test
+    technical_depth: Nine phases wiring CUR 2.0 through Glue and Athena into Grafana,
+      with a dual remediation pattern gating on the Environment tag so non-prod auto-stops
+      while production holds for approval, and Budget Actions as a static backstop
+      beside the Lambda dynamic responder.
+    voice: Clear on the Tag Policies versus Cost Allocation Tags distinction where
+      neither replaces the other, but opens on sharpen cloud cost visibility and closes
+      with sharpened decision speed, a swept-filler pattern that reads as padding.
+    validation: The spike test is honest that EventBridge rejected synthetic cost-explorer
+      events because only Cost Anomaly Detection may publish that source, so validation
+      ran by direct Lambda invoke and confirmed a stopped instance, a DynamoDB log
+      row, and a Grafana annotation, but no phase carries measured cost or latency
+      figures.
+  average: 7.33
+  rationale: CUR 2.0 to Athena chargeback with auto-stop remediation on non-prod spend
   featured: false
 - slug: aws-hybrid-cloud-network-architecture
   axis_scores:
@@ -27,15 +53,19 @@ systems:
     voice: 8
     validation: 9
   axis_reasoning:
-    technical_depth: Transit Gateway hub-spoke, BGP VPN, centralized Suricata inspection,
-      PrivateLink, and hybrid DNS across two accounts form a production-shape topology.
-    voice: Sharp on tradeoffs, naming why explicit route control and why both static
-      analysis and data-plane tests are required.
+    technical_depth: 'Nine phases of real networking depth: Transit Gateway with propagation
+      deliberately disabled for explicit spoke and inspection route table association,
+      strongSwan plus FRRouting customer gateway, Suricata inspection, RAM sharing,
+      and bidirectional Route 53 resolver endpoints.'
+    voice: Specific and decision-led, naming why Transit Gateway is required because
+      VPC peering is non-transitive, though a few swept words such as sharpens segmentation
+      sit in otherwise clean prose.
     validation: The failover drill measured 38s BGP reconvergence against a 60s target
-      plus ENI_SG_RULES_MISMATCH drift detection as a compliance gate.
-  average: 8.7
-  rationale: Hybrid TGW network with measured 38s BGP reconvergence and drift-gated
-    path validation
+      with three ICMP packets timed out and four accepted BGP routes on the secondary
+      tunnel, and the doc argues why control-plane analysis and data-plane tests are
+      both required for sign-off.
+  average: 8.67
+  rationale: Hybrid network proving 38s BGP reconvergence under a forced tunnel failure
   featured: true
 - slug: aws-landing-zone-soc2-governance
   axis_scores:
@@ -43,143 +73,183 @@ systems:
     voice: 8
     validation: 8
   axis_reasoning:
-    technical_depth: Ten phases build a 4-OU org with a 6-control SCP library, StackSets
-      baselines, Identity Center, and an account vending machine.
-    voice: Explains the deny-list-depends-on-FullAWSAccess trap and the management-account
-      blind spot plainly.
-    validation: SCP smoke tests map six findings to six controls with a Findings Remediation
-      Matrix proving deny controls override AdministratorAccess.
+    technical_depth: 'Ten phases of inherited governance: a four-OU topology with
+      SCP inheritance by OU placement, StackSets auto-deploying CloudTrail, Config,
+      and GuardDuty into new accounts, and a Service Catalog account vending machine
+      that applies tags and baselines at provision time.'
+    voice: Specific and honest, notably the management account blind spot passage
+      naming a residual high-privilege island where the payer account can drift from
+      baseline unless hardened through separate deployment paths.
+    validation: SCP smoke tests assert GDPR region restrictions and governance-escape
+      prevention, and the Findings Remediation Matrix traces each simulated SOC 2
+      finding to control, state, and artifact, but the evidence is a mapping chain
+      rather than measured results.
   average: 8.0
-  rationale: SOC 2 evidence chain mapping six SCP controls to six findings with a
-    remediation matrix
-  featured: false
+  rationale: SCP library mapped to six SOC 2 findings with a findings remediation
+    matrix
+  featured: true
 - slug: aws-multi-compute-pci-payments-platform
   axis_scores:
     technical_depth: 9
+    voice: 6
+    validation: 6
+  axis_reasoning:
+    technical_depth: The broadest compute surface here, running one Flask workload
+      across ECS on EC2, Fargate, and EKS behind weighted target groups while a serverless
+      backbone handles ingestion, with a 10 percent canary deployment config and awsvpc
+      task-level ENI isolation documented in ADR-002.
+    voice: The weakest writing among the deep systems, stacking raises visibility,
+      raises scalability, and raises governance across sections while most paragraphs
+      open with detached constructions rather than a named decision.
+    validation: The scan gate demo is real and the doc is admirably honest that it
+      does not constitute complete PCI-DSS certification evidence, but k6 was flagged
+      as missing at setup and no load, chaos, or DLQ result reports an actual number,
+      leaving verified traffic distribution behavior unquantified.
+  average: 7.0
+  rationale: One payment workload across ECS, Fargate, EKS, and Lambda behind a scan
+    gate
+  featured: false
+- slug: aws-multi-region-dr-tiering
+  axis_scores:
+    technical_depth: 7
     voice: 8
     validation: 8
   axis_reasoning:
-    technical_depth: One workload runs across ECS-EC2, Fargate, and EKS plus a serverless
-      backbone with blue/green canary, DLQ, and a scan gate.
-    voice: Names concrete decisions like awsvpc task-level isolation and Express vs
-      Standard Step Functions.
-    validation: A deliberately vulnerable image proves the scan gate blocks CRITICAL
-      findings, framed candidly as one control not full PCI-DSS.
-  average: 8.3
-  rationale: Three compute paths on one workload with a scan gate proven by a vulnerable
-    image
-  featured: true
-- slug: aws-multi-region-dr-tiering
-  axis_scores:
-    technical_depth: 8
-    voice: 8
-    validation: 7
-  axis_reasoning:
-    technical_depth: Four-tier workload-to-recovery mapping, Aurora failover ADR,
-      Route 53 and ARC routing, and a ransomware Vault Lock drill.
-    voice: The $100K/min active-active justification and cost-per-nine reasoning tie
-      architecture directly to revenue exposure.
-    validation: Gameday reports 4 of 4 scenarios pass with a measured 23s RTO exported
-      to JSON, but runs on LocalStack emulation not real AWS.
-  average: 7.7
-  rationale: Revenue-tiered DR with measured 23s RTO and a ransomware Vault Lock drill
+    technical_depth: Tiering logic is sound with workloads mapped across active-active
+      through backup-only and ADR-04 selecting Aurora on a 30s versus 60-120s failover
+      argument, but the whole stack runs against LocalStack emulation rather than
+      live AWS, which caps how much production shape it can claim.
+    voice: Concrete and financially grounded, tying checkout to active-active through
+      the $100K per minute exposure and the prior 47-minute outage at roughly $4.7M
+      rather than asserting the tier abstractly.
+    validation: Gameday forced failures under active Locust load with checkout RTO
+      measured at 23s against a 60s target, RTO exported as JSON artifacts, four of
+      four scenarios passing, and a ransomware drill where Vault Lock blocked deletion
+      under simulated admin compromise.
+  average: 7.67
+  rationale: DR tiers priced per nine, checkout failover measured at 23s against a
+    60s target
   featured: false
 - slug: aws-multi-region-edge-failover-platform
   axis_scores:
     technical_depth: 8
-    voice: 8
-    validation: 9
+    voice: 7
+    validation: 8
   axis_reasoning:
-    technical_depth: Two-region Lambda origins with CloudFront origin groups, Route
-      53 failover, Global Accelerator Anycast IPs, and edge WAF.
-    voice: Calls out the SAP-C02 failover-vs-multivalue trap and the WebACL-association
-      gotcha directly.
-    validation: The kill-primary test measured 1.1s failover against a 60s target
-      and cross-checked resources against Terraform state for zero orphans.
-  average: 8.3
-  rationale: Two-layer edge failover measured at 1.1s with a zero-orphan teardown
-    check
-  featured: true
+    technical_depth: Two independent failover layers are argued cleanly, with CloudFront
+      origin groups recovering ahead of DNS cache expiry and Global Accelerator supplying
+      two static Anycast IPv4 addresses for partner firewall allowlisting, plus Lambda@Edge
+      signed URL validation at origin-request.
+    voice: Competent but noticeably passive next to the top systems, leaning on generic
+      closers such as strengthening security posture where a concrete claim would
+      land harder.
+    validation: The kill-primary test recorded 1.1s failover against the 60s objective
+      under cache-busting requests, teardown cross-checked deployed resources against
+      Terraform-managed assets for zero orphans, and the WAF phase reports the real
+      gotcha that a WebACL does not enforce until associated.
+  average: 7.67
+  rationale: Two-layer edge failover measured at 1.1s with static Anycast IPs for
+    partners
+  featured: false
 - slug: aws-polyglot-persistence-trading-lab
   axis_scores:
     technical_depth: 8
-    voice: 7
+    voice: 6
     validation: 6
   axis_reasoning:
-    technical_depth: Fifty-two Terraform resources deploy Aurora Serverless v2, DynamoDB
-      with DAX, and MemoryDB with DMS migration and a k6 spike benchmark.
-    voice: The I/O-Optimized break-even and Babelfish compatibility reasoning are
-      specific.
-    validation: DynamoDB is verified at 50K records, but the doc is candid that Aurora
-      and MemoryDB checks were blocked and DMS reported zero rows into Aurora.
-  average: 7.0
-  rationale: Three-engine polyglot benchmark with candid disclosure of blocked verification
-    paths
+    technical_depth: Three engines deployed as 52 resources across modular Terraform,
+      with ADR-001 prioritizing DynamoDB plus DAX because trade lookups sit in the
+      transaction path, extended by an Aurora I/O-Optimized break-even analysis and
+      a Babelfish TDS compatibility proof.
+    voice: Informative but filler-heavy, repeating raised application responsiveness
+      and raises scalability, and the opening paragraph runs long enough that the
+      mission blurs.
+    validation: Benchmarks are real where they exist (MemoryDB 5 ms p50 and 39 ms
+      p99, DynamoDB 64 req/s with zero errors, 50K records confirmed by CLI count),
+      but the doc states plainly that DMS reported zero rows into Aurora and helper
+      EC2 cloud-init failed, so parity across the three engines was never achieved.
+  average: 6.67
+  rationale: Three engines benchmarked under a 10x spike, with the gaps reported honestly
   featured: false
 - slug: aws-zero-orphan-migration-platform
   axis_scores:
     technical_depth: 8
-    voice: 7
-    validation: 9
+    voice: 9
+    validation: 8
   axis_reasoning:
-    technical_depth: Terraform control plane drives DataSync, DMS with schema conversion,
-      and Transfer Family with a cost-decision ADR at every junction and a separate
-      compliance-vault workspace.
-    voice: Plain and honest with clear cost reasoning, but the repeated 'In this step,
-      I' openers read flatter than the top systems.
-    validation: The teardown phase shows terraform destroy of 95 resources with real
-      run IDs, a Gate 4 tag query returning an empty list, and an honest exit-code-254
-      explanation.
-  average: 8.0
-  rationale: Terraform migration platform proven by an empty Gate 4 tag query after
-    95-resource destroy
+    technical_depth: A Terraform control plane spanning DataSync, DMS with schema
+      conversion, a Lambda workload router over Glacier tiers, and a separate terraform-compliance
+      workspace because COMPLIANCE-mode Object Lock and routine teardown have opposite
+      goals.
+    voice: 'Crisp and load-bearing throughout, closing on a line that carries the
+      brand well: architecture is about making sure every service has a reason to
+      exist, a cost boundary, a security model, and a lifecycle path.'
+    validation: 'The teardown evidence is the most forensic in the lens: 95 resources
+      destroyed, empty state, a Gate 4 tag query returning an empty resource list,
+      and exit code 254 explained as expected NotFound errors rather than a failed
+      destroy, though the SFTP and DMS paths read as planned checks.'
+  average: 8.33
+  rationale: Terraform teardown proven to zero orphans with an empty tag-query gate
   featured: true
 - slug: lakehouse-iceberg-trino-spark
   axis_scores:
-    technical_depth: 6
-    voice: 6
-    validation: 5
+    technical_depth: 4
+    voice: 4
+    validation: 3
   axis_reasoning:
-    technical_depth: Iceberg, Trino, Spark, Polaris, and MinIO form a working local
-      lakehouse with CDC, compaction, and time-travel, but the diagram is generic.
-    voice: Readable but generic, with short repeated stubs and filler.
-    validation: Compaction and time-travel recovery are described, but evidence stays
-      hand-wavy with no concrete numbers cited.
-  average: 5.7
-  rationale: Local Iceberg lakehouse with time-travel recovery and compaction before-and-after
-    checks
+    technical_depth: A local Docker Compose stack of MinIO, Polaris, Trino, Spark,
+      and Jupyter with a thin generic diagram of roughly a dozen nodes, no failure
+      modes, and no cloud or scale constraint since everything runs on localhost.
+    voice: The most generic prose in the lens, built on detached two-line stubs such
+      as baseline metrics establish performance expectations that state a category
+      without carrying information.
+    validation: 'Effectively hand-wavy: the compaction phase promises before-and-after
+      metrics but reports no file counts or query times, the benchmark comparison
+      names no benchmark, and the time-travel recovery is described conceptually rather
+      than shown recovering a specific deleted record.'
+  average: 3.67
+  rationale: Local Iceberg lakehouse with time-travel recovery from a prior snapshot
   featured: false
 - slug: multicloud-terraform-network-foundation
   axis_scores:
-    technical_depth: 6
-    voice: 6
-    validation: 5
+    technical_depth: 4
+    voice: 5
+    validation: 4
   axis_reasoning:
-    technical_depth: One Terraform interface spans AWS, Azure, and GCP with a cross-cloud
-      IPsec VPN, real breadth but a thin diagram and short phases.
-    voice: Clean and consistent, yet mostly generic with little tradeoff detail.
-    validation: Validation rests on terraform plan output, drift detection, and a
-      Claude Code review that flagged loose GCP firewall rules, with no measured connectivity
-      evidence.
-  average: 5.7
-  rationale: One Terraform interface across AWS, Azure, and GCP with an AI-flagged
-    firewall fix
+    technical_depth: A working three-provider module layout with a cross-cloud IPsec
+      tunnel, but the diagram stays at primitive level (VPC, VNet, GCP VPC with Cloud
+      NAT) with no failure modes, and the README says seven phases in the Overview
+      while the Implementation section lists eight.
+    voice: Readable and honest about the 70-minute scope, with a decent teardown line
+      that cleanup is part of the workflow rather than an afterthought, but most paragraphs
+      explain generic Terraform concepts rather than decisions the build actually
+      made.
+    validation: Evidence stops at plan output and state drift checks with no measured
+      result anywhere, and the strongest signal is a Claude Code review that flagged
+      permissive GCP firewall rules and recommended AES-256, which is a recommendation
+      rather than a verified control.
+  average: 4.33
+  rationale: One Terraform interface across AWS, Azure, and GCP with a cross-cloud
+    IPsec tunnel
   featured: false
 - slug: zero-key-aws-security-architecture
   axis_scores:
-    technical_depth: 10
-    voice: 9
-    validation: 9
+    technical_depth: 9
+    voice: 7
+    validation: 8
   axis_reasoning:
-    technical_depth: Thirteen phases cover OIDC federation, multi-region KMS envelope
-      encryption, ABAC session tags, Object Lock, Secrets rotation, and WorkSpaces
-      failover.
-    voice: Distinctive and precise, explaining trust-policy placement, key policies
-      vs grants, and Compliance vs Governance mode as real decisions.
-    validation: A four-attack red-team blocks cross-account escalation, KMS bypass,
-      S3 delete, and session-tag bypass, and envelope encryption is validated step
-      by step.
-  average: 9.3
-  rationale: Zero-trust healthcare architecture with a four-attack red-team, four
-    blocks
+    technical_depth: 'Thirteen phases and the widest control surface in the lens:
+      AD Connector federation for 3,000 users, GitHub OIDC with permission boundaries
+      denying iam:CreateUser and cloudtrail:StopLogging, multi-region KMS envelope
+      encryption, ABAC session tags, and WorkSpaces failover by ConnectionIdentifier.'
+    voice: Technically precise and strong on distinctions such as key policies versus
+      grants, but a repeated filler pattern (raises resiliency, raises deployment
+      predictability, raises operational maintainability) dulls the edge.
+    validation: The red-team phase lands four attacks against four blocks across STS,
+      KMS, S3 Object Lock, and session-tag bypass, and rotation is proven through
+      AWSCURRENT, AWSPREVIOUS, and AWSPENDING staging labels, but the blocks are described
+      qualitatively without measured artifacts.
+  average: 8.0
+  rationale: Long-lived credentials removed, then red-teamed with four attacks and
+    four blocks
   featured: true

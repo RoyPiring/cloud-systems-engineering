@@ -1,6 +1,6 @@
 # Cloud Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-11-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--06--30-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-12-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--07--15-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What's the technical foundation when AI is not the headline?*
 
@@ -23,12 +23,12 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 
 ## Featured Systems
 
-- **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**: Hybrid TGW network with measured 38s BGP reconvergence and drift-gated path validation
-- **[ECS vs EKS vs Lambda Architecture](./systems/aws-multi-compute-pci-payments-platform/)**: Three compute paths on one workload with a scan gate proven by a vulnerable image
-- **[AWS Multi-Region Edge Failover Sprint](./systems/aws-multi-region-edge-failover-platform/)**: Two-layer edge failover measured at 1.1s with a zero-orphan teardown check
-- **[AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/)**: Terraform migration platform proven by an empty Gate 4 tag query after 95-resource destroy
-- **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Zero-trust healthcare architecture with a four-attack red-team, four blocks
+- **[AWS Bedrock Multi-Tenant Routing](./systems/aws-bedrock-multi-tenant-routing/)**: Config-driven model routing with circuit breaker fallback measured at 1.28s
+- **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**: Hybrid network proving 38s BGP reconvergence under a forced tunnel failure
+- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**: SCP library mapped to six SOC 2 findings with a findings remediation matrix
+- **[AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/)**: Terraform teardown proven to zero orphans with an empty tag-query gate
+- **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Long-lived credentials removed, then red-teamed with four attacks and four blocks
 
-_+ 6 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 7 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 
