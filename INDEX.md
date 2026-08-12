@@ -20,3 +20,5 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 10 | [AWS Database Modernization Lab](./systems/aws-polyglot-persistence-trading-lab/) | 2026-05-19 | 2026-05-19 | Aurora · DynamoDB · MemoryDB · Polyglot |
 | 11 | [AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/) | 2026-06-30 | 2026-06-30 | AWS · Terraform · Zero-Orphan · Migration |
 | 12 | [AWS Bedrock Multi-Tenant Routing](./systems/aws-bedrock-multi-tenant-routing/) | 2026-07-15 | 2026-07-15 | Bedrock · AppConfig · Circuit-Breaker · Multi-Tenant |
+| 13 | [Error Budget Control Room](./systems/error-budget-control-room/) | 2026-08-12 | 2026-08-12 | SRE · SLO · Burn-Rate · Prometheus |
+| 14 | [Build an Operable Service](./systems/operable-inventory-service/) | 2026-08-12 | 2026-08-12 | Twelve-Factor · OpenTelemetry · Health-Probes · FastAPI |

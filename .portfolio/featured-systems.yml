@@ -1,7 +1,7 @@
 lens: cloud-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-07-15'
+scored_at: '2026-08-12'
 human_pin: []
 systems:
 - slug: aws-bedrock-multi-tenant-routing
@@ -87,7 +87,7 @@ systems:
   average: 8.0
   rationale: SCP library mapped to six SOC 2 findings with a findings remediation
     matrix
-  featured: true
+  featured: false
 - slug: aws-multi-compute-pci-payments-platform
   axis_scores:
     technical_depth: 9
@@ -252,4 +252,54 @@ systems:
   average: 8.0
   rationale: Long-lived credentials removed, then red-teamed with four attacks and
     four blocks
+  featured: false
+- slug: error-budget-control-room
+  axis_scores:
+    technical_depth: 9
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'Burn-rate thresholds derived from the Google SRE Workbook relationship
+      r_th = p x T / w rather than copied, with OpenSLO as the declared source of truth
+      feeding Sloth-generated Prometheus rules, and a rejected-alternative decision
+      that carries real weight: Candidate C was dropped because status and latency
+      lived in separate series with no shared request identifier, so a per-request
+      logical AND could not be proven.'
+    voice: Direct and decision-led, naming the two opposite risks of bad alert design
+      and stating plainly that a candidate which sounded useful could not be measured
+      honestly from the available telemetry, with no filler verbs.
+    validation: 'Firing order proven empirically rather than assumed: a 10% injected
+      error rate drove both rules and the fast burn paged first, and the hand-derived
+      14.4x and 6x matched the generated configuration. Held at 8 because the proof
+      ran in compressed windows and the doc itself records that the uncompressed 30-day
+      period means the budget-percentage meaning does not carry.'
+  average: 8.67
+  rationale: Burn-rate multipliers derived from first principles, then proven by firing
+    order under injected error
+  featured: true
+- slug: operable-inventory-service
+  axis_scores:
+    technical_depth: 8
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: Operability engineered rather than assumed, with liveness and
+      readiness split against a named failure mode (a single health endpoint checking
+      the database turns a blip into a restart storm), OpenTelemetry auto-instrumentation
+      producing a parent-child span chain across HTTP, handler, and database, and an
+      ADR correction that replaced a vague reversal trigger with a measurable one.
+      Held at 8 because the substrate is a single service and one database rather than
+      distributed infrastructure.
+    voice: 'Plain and unhedged: a service that can start is not enough, and the blocked
+      AI scoring is reported as what it was, with the recorded miss being that scoring
+      against the sealed key never happened rather than any invented content-level
+      finding.'
+    validation: 'Concrete bars across the proof run: liveness answered 200 in well
+      under 200 ms with PostgreSQL down, Jaeger showed a 5-span trace, readiness returned
+      503 while liveness held 200, readiness healed with no restart, and a clean clone
+      reproduced it in 1 min 9 sec. Held at 8 because the AI-audit bar was never completed
+      and the clone timing is qualified by a reused pip layer cache.'
+  average: 8.33
+  rationale: Config, health, and tracing proven by deliberate failure, reproduced from
+    a clean clone in 1 min 9 sec
   featured: true

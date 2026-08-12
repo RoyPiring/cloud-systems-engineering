@@ -1,6 +1,6 @@
 # Cloud Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-12-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--07--15-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-14-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--08--12-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What's the technical foundation when AI is not the headline?*
 
@@ -25,10 +25,10 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 
 - **[AWS Bedrock Multi-Tenant Routing](./systems/aws-bedrock-multi-tenant-routing/)**: Config-driven model routing with circuit breaker fallback measured at 1.28s
 - **[AWS Hybrid Cloud Network Architecture](./systems/aws-hybrid-cloud-network-architecture/)**: Hybrid network proving 38s BGP reconvergence under a forced tunnel failure
-- **[Architect an AWS Landing Zone from Scratch](./systems/aws-landing-zone-soc2-governance/)**: SCP library mapped to six SOC 2 findings with a findings remediation matrix
+- **[Error Budget Control Room](./systems/error-budget-control-room/)**: Burn-rate multipliers derived from first principles, then proven by firing order under injected error
 - **[AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/)**: Terraform teardown proven to zero orphans with an empty tag-query gate
-- **[Zero-Key AWS Security Architecture](./systems/zero-key-aws-security-architecture/)**: Long-lived credentials removed, then red-teamed with four attacks and four blocks
+- **[Build an Operable Service](./systems/operable-inventory-service/)**: Config, health, and tracing proven by deliberate failure, reproduced from a clean clone in 1 min 9 sec
 
-_+ 7 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 9 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 
