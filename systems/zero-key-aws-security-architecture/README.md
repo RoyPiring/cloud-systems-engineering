@@ -65,7 +65,7 @@ flowchart LR
     subgraph ABAC["ABAC Authorization"]
         SessionTags(Session Tags Project-Scoped)
         STSEval(STS Trust Policy + Tag Eval)
-        BucketPolicy(S3 Bucket Policy: PrincipalTag == ResourceTag)
+        BucketPolicy("S3 Bucket Policy: PrincipalTag == ResourceTag")
     end
 
     subgraph KMS["Multi-Region KMS + Envelope Encryption"]
