@@ -31,6 +31,4 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 
 _+ 10 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
-**+5 more systems**, see the full catalog in [`INDEX.md`](./INDEX.md).
-
 
