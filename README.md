@@ -17,7 +17,7 @@ Cloud platforms engineered for scale, reliability, and uptime. Each system in th
 
 ## What this domain covers
 
-Cloud, SRE, DevOps, and platform engineering across the full technology stack. Includes infrastructure depth, reliability practices, and platform tooling that holds under production load.
+Cloud, SRE, DevOps, and platform engineering: the layer a service runs on. Infrastructure depth, reliability practices, and platform tooling that holds under production load. The application above it, its language runtime, API contract and request handling, belongs to full-stack-systems-engineering.
 
 **What it isn't.** A vendor-neutral comparison. A guarantee of operational scale.
 
