@@ -1,7 +1,7 @@
 lens: cloud-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-17'
+scored_at: '2026-09-27'
 human_pin: []
 systems:
 - slug: aws-bedrock-multi-tenant-routing
@@ -170,34 +170,6 @@ systems:
       and the WAF phase reports the real gotcha that a WebACL does not enforce until associated.
   average: 7.67
   rationale: Two-layer edge failover measured at 1.1s with static Anycast IPs for partners
-  featured: false
-- slug: workstation-readiness-doctor
-  axis_scores:
-    technical_depth: 7
-    voice: 8
-    validation: 7
-  axis_reasoning:
-    technical_depth: A table-driven loop where ten check entries share one timeout, formatting, evidence-capture
-      and aggregation path, version gates that separate presence on PATH from policy compliance, a five-second
-      deadline on every external command, and an exit-status contract that keeps the human summary and
-      the automation signal consistent. The diagram is among the clearest in the lens, naming each control
-      beside the claim it does and does not prove. Held at 7 because the substrate is one read-only binary
-      on one workstation with no service, store, or network component, so there is no cross-component
-      data flow to design.
-    voice: 'First person and unhedged with no filler verbs anywhere, and the bounded claims carry the
-      brand: the SHA-256 gate proved file consistency with published digests, not that vendor software
-      was free of defects, and a dependency on PATH could still be unsupported, stalled, or misconfigured.
-      Held at 8 because the two exit-status sections restate the same argument and the report-style past
-      tense reads a shade flatter than the top four.'
-    validation: 'The pin-drift test is a real, reversible negative test with a concrete artifact: Node.js
-      24.21.0 stayed installed and on PATH while the gate failed on a changed expected major, then the
-      policy was restored. Installer provenance was gated on SHA-256 against named vendor digest files,
-      and the merge closed issue #1 through the pull-request body. Held at 7 because the five-second timeout
-      is never shown firing against a stalled command, the exit code is described rather than captured,
-      no unit or integration tests exist yet (the doc names this as the next goal), and only Windows was
-      run.'
-  rationale: Ten table-driven readiness checks with version gates, proven by a pin-drift test
-  average: 7.33
   featured: false
 - slug: aws-finops-command-center
   axis_scores:

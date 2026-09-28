@@ -1,6 +1,6 @@
 # Cloud Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-15-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--17-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-14-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--09--27-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *What's the technical foundation when AI is not the headline?*
 
@@ -29,6 +29,6 @@ Cloud, SRE, DevOps, and platform engineering across the full technology stack. I
 - **[Build an Operable Service](./systems/operable-inventory-service/)**: Config, health, tracing proven by deliberate failure, reproduced from a clean clone in 1 min 9 sec
 - **[AWS Principal SA: Fix the $2.1M Pipeline](./systems/aws-zero-orphan-migration-platform/)**: Terraform teardown proven to zero orphans with an empty tag-query gate
 
-_+ 10 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 9 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 

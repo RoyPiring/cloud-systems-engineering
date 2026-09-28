@@ -22,4 +22,3 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 12 | [AWS Bedrock Multi-Tenant Routing](./systems/aws-bedrock-multi-tenant-routing/) | 2026-07-15 | 2026-07-15 | AWS · Bedrock · Multi-Tenant · API |
 | 13 | [Error Budget Control Room](./systems/error-budget-control-room/) | 2026-08-12 | 2026-08-12 | AI · Burn-Rate · After-Action |
 | 14 | [Build an Operable Service](./systems/operable-inventory-service/) | 2026-08-12 | 2026-08-12 | AI-Generated · OpenTelemetry · Teach-Back |
-| 15 | [Build a Workstation Readiness Doctor](./systems/workstation-readiness-doctor/) | 2026-09-17 | 2026-09-17 | Portfolio-Ready · Cross-Platform · Ten-Check |

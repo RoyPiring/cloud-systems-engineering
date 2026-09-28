@@ -17,7 +17,6 @@ This portfolio repository was built from NextWork projects, created via NextWork
 - Build an E-Commerce Analytics Lakehouse
 - Multi-Cloud Network Foundation with Terraform
 - Build an Operable Service
-- Build a Workstation Readiness Doctor
 - Zero-Key AWS Security Architecture
 
 ## About NextWork
