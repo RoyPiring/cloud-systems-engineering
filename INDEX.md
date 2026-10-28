@@ -22,4 +22,4 @@ Cloud platforms engineered for scale, reliability, and uptime.
 | 12 | [AWS Bedrock Multi-Tenant Routing](./systems/aws-bedrock-multi-tenant-routing/) | 2026-07-15 | 2026-07-15 | AWS · Bedrock · Multi-Tenant · API |
 | 13 | [Error Budget Control Room](./systems/error-budget-control-room/) | 2026-08-12 | 2026-08-12 | AI · Burn-Rate · After-Action |
 | 14 | [Build an Operable Service](./systems/operable-inventory-service/) | 2026-08-12 | 2026-08-12 | AI-Generated · OpenTelemetry · Teach-Back |
-| 15 | [Secure a Local Kubernetes AI Lab](./systems/local-ai-lab-exposure-rule/) | 2026-10-27 | 2026-10-27 | kind · Ollama in Kubernetes · Loopback-Only · PASS or OPEN at Exit 1 |
+| 15 | [Secure a Local Kubernetes AI Lab](./systems/local-ai-lab-exposure-rule/) | 2026-10-27 | 2026-10-27 | kind · Ollama · Loopback-Only · PASS 0 or OPEN 1 |

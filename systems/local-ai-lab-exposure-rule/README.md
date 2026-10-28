@@ -35,10 +35,12 @@ flowchart TD
     subgraph Lab["A local cluster with one deliberate door"]
         Kind(A clean laptop-ai-lab kind cluster, created after the existing toolchain was checked rather than changed)
         Versions[("Recorded toolchain: Go 1.27.1, kind 0.33.0, kubectl 1.36.1, Git 2.55, GitHub CLI 2.101, Ollama 0.40.9, Docker 29.8.2")]
+        Host(The Windows host client, which reaches the model only through the loopback port)
         ClusterIP[("The Ollama Service left as ClusterIP on port 11434")]
+        Workload[("The Ollama workload itself, running inside the cluster")]
         Loopback[("The kind mapping reaching the Windows host only through 127.0.0.1:21434")]
-        OneDoor{{Keeping the host listener on the loopback interface gives local access for the model tests without binding the port to every interface on the laptop}}
-        Comparable{{Recording the versions is what makes a later run on another workstation comparable rather than merely different}}
+        OneDoor{{Keeping the host listener on the loopback interface gives local access for the model tests without intentionally binding the port to every interface on the laptop}}
+        Comparable{{Recording the versions makes a later run on another workstation easier to compare when it behaves differently}}
     end
 
     subgraph Design["The policy published before the code"]
@@ -46,7 +48,7 @@ flowchart TD
         Sign[("License and contribution material with the required sign-off, committed before the public repository existed")]
         Issue[("Issue 1 on the public Project, connecting the planned check to visible tracking")]
         Oldest{{Keeping the design as the oldest commit shows reviewers what the policy intended before they see code written to satisfy it}}
-        NoRewrite{{It also removes the option of rewriting the documentation afterwards to match whatever the implementation happened to do}}
+        NoRewrite{{It also lowers the chance of the documentation being rewritten afterwards to match whatever the implementation happened to produce}}
     end
 
     subgraph Rules["Four cases decided, two left open on purpose"]
@@ -104,7 +106,9 @@ flowchart TD
     Quality -- "set up in" --> Kind
     Kind -- "recorded as" --> Versions
     Kind -- "holds" --> ClusterIP
-    ClusterIP -- "reached through" --> Loopback
+    Host -- "connects through" --> Loopback
+    Loopback -- "forwards into" --> ClusterIP
+    ClusterIP -- "fronts" --> Workload
     Loopback -- "gives" --> OneDoor
     Versions -- "delivers" --> Comparable
     OneDoor -- "documented first in" --> First
@@ -127,6 +131,8 @@ flowchart TD
     RedFirst -- "demonstrates" --> CanReject
     CanReject -- "only then implementing" --> Impl
     Safe -- "is the rule Impl encodes" --> Impl
+    Loopback -- "kind configuration read by" --> Impl
+    ClusterIP -- "live Service state read by" --> Impl
     Impl -- "returned" --> Ok
     Impl -- "returned" --> Pass
     Pass -- "held under" --> Reads
@@ -144,15 +150,15 @@ flowchart TD
     Up1 -- "kept apart from the policy evidence by" --> Separate
     Gaps -- "written up as" --> Named
     Named -- "gives" --> NotScanner
-    Impl -- "cost" --> Clock
+    First -- "whole run from design through review cost" --> Clock
     Clock -- "leaves" --> Owed
     Named -- "points at" --> Uncovered
     Owed -- "must be written before code reaches" --> Uncovered
-    Live -- "is what keeps the port away from" --> Other
-    ThreeStates -- "read by" --> Other
+    Live -- "detects, rather than prevents, a path to" --> Other
+    ThreeStates -- "preserved in the contribution trail beside" --> Named
 
-    class Versions,ClusterIP,Loopback,Sign,Issue,Safe,OpenMap,NodePortRule,Gaps,Score,RedFirst,Ok,Pass,Open1,OpenKind,Back,Up1,Up2,Named,Clock datastore
-    class Kind,First,Questions,Empty,Impl,Planted,Deleted service
+    class Versions,ClusterIP,Workload,Loopback,Sign,Issue,Safe,OpenMap,NodePortRule,Gaps,Score,RedFirst,Ok,Pass,Open1,OpenKind,Back,Up1,Up2,Named,Clock datastore
+    class Kind,Host,First,Questions,Empty,Impl,Planted,Deleted service
     class Quality,Verdict,NoTrade,OneDoor,Comparable,Oldest,NoRewrite,Default,Explicit,CanReject,Silent,Reads,Live,ThreeStates,Direct,Separate,NotScanner,Owed event
     class Other,Uncovered io
 ```
