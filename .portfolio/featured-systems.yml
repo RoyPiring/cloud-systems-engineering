@@ -1,7 +1,7 @@
 lens: cloud-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-09-27'
+scored_at: '2026-10-27'
 human_pin: []
 systems:
 - slug: aws-bedrock-multi-tenant-routing
@@ -101,6 +101,42 @@ systems:
   average: 8.33
   rationale: Terraform teardown proven to zero orphans with an empty tag-query gate
   featured: true
+- slug: local-ai-lab-exposure-rule
+  axis_scores:
+    technical_depth: 7
+    voice: 9
+    validation: 8
+  axis_reasoning:
+    technical_depth: 'A small artifact carrying one good design idea. A kind cluster runs Ollama inside
+      Kubernetes with the host listener held on the loopback interface, and a Go checker reads the kind
+      configuration and the live Service objects to return PASS or OPEN with a matching process status.
+      The idea worth keeping is that the policy encodes the tool''s real default rather than the
+      reassuring reading of it: an omitted kind listenAddress is treated as 0.0.0.0, because that is what
+      the default host binding actually accepts. Held at 7 against the lens peers, which build a
+      multi-tenant Bedrock routing substrate or a hybrid cloud network architecture at 9 and a running
+      FastAPI service with Postgres at 8, because this is one checker over a local single-node lab.'
+    voice: 'The record keeps two numbers apart that would be easy to blur. The model answered 6 of 10 at
+      24.4 tokens per second, and the write-up states plainly that the score is barred from the safety
+      verdict, because a model can answer well while the configuration around it offers its port to every
+      machine on the network and a higher score would not make a reachable port safer. Two policy cases,
+      a LoadBalancer Service and .spec.externalIPs, are left undefined and named as gaps instead of being
+      quietly assigned. The rebuild claim cites the console line that disappeared rather than the shorter
+      duration, which is the harder evidence to argue with. Six uncovered exposure paths are listed so
+      v0.1.0 is not read as a complete network-security scanner, and the one-hour figure is called an
+      estimate because per-phase timestamps were not captured.'
+    validation: 'Both directions are exercised and the negative case ran first. The supplied tests were
+      executed while checkExposure and runCheck were still empty starter functions and failed on purpose,
+      which shows the suite can reject an unfinished implementation before any passing output exists to
+      trust. Three live states then follow: the safe ClusterIP and loopback mapping returning PASS at exit
+      0, an open kind mapping and a planted NodePort Service each returning OPEN at exit 1, and the
+      verdict returning to PASS at exit 0 once the planted Service is deleted. Watching it flip and flip
+      back is what proves the checker reads current cluster state rather than a cached verdict or a
+      response keyed to a test filename. Lab rebuild is evidenced separately from policy correctness.
+      Held at 8 because the policy covers four cases by the author''s own count and leaves six exposure
+      paths unevaluated, so the passing verdict is narrow by construction.'
+  average: 8.0
+  rationale: A planted NodePort flipped the verdict to OPEN at exit 1, and deleting it flipped it back
+  featured: false
 - slug: zero-key-aws-security-architecture
   axis_scores:
     technical_depth: 9

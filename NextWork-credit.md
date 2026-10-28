@@ -15,6 +15,7 @@ This portfolio repository was built from NextWork projects, created via NextWork
 - AWS Principal SA: Fix the $2.1M Pipeline
 - Error Budget Control Room
 - Build an E-Commerce Analytics Lakehouse
+- Secure a Local Kubernetes AI Lab
 - Multi-Cloud Network Foundation with Terraform
 - Build an Operable Service
 - Zero-Key AWS Security Architecture
